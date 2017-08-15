@@ -1,0 +1,101 @@
+@import "compass/css3";
+
+$bg:#F7CA18;
+$sushi:#E26A6A;
+
+body {
+  background: $bg;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  text-align:center;
+  margin:40px 0 0;
+  font-size:60px;
+  font-weight:900;
+}
+
+p {
+  text-align:center;
+  margin-bottom:40px;
+  color:darken($bg, 20%);
+}
+
+.wrap {
+  max-width:450px;
+  margin:20px auto;
+}
+
+.item {
+  height:150px;
+  width:150px;
+  cursor:pointer;
+  
+  
+  
+  img {
+    display:block;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:10px solid #fff;
+    box-sizing:border-box;  
+    animation: roll 1.5s 300ms ease both;
+  }
+  
+  &.big {
+    width:300px;
+    height:300px;
+    
+    img {
+      width:300px;
+      height:300px;
+    }
+    
+    .like {
+      display:none;
+    }
+  }
+  
+  
+  &:hover {
+    .like {
+      transform:scale(1.1);
+    }
+  }
+  
+  
+  
+}
+
+
+
+.like {
+  position:absolute;
+  opacity:1;
+  width:50px;
+  height:50px;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  margin:auto;
+  line-height:50px;
+  border-radius:50%;
+  text-align:center;
+  background:$sushi;
+  color:lighten($sushi,25%);
+  font-size:12px;
+  font-family:'Lato';
+  transition:all 0.3s ease-in-out;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(270deg);
+  } 
+  100% {
+    transform: rotate(360deg);
+
+  }
+}
